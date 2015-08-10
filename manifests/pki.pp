@@ -19,6 +19,7 @@
 # use of smartcards with Subversion.
 
 class subversion::pki {
-    include "subversion::pki::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "subversion::pki::${lower_osfamily}"
     include subversion::pki::trust_cas
 }
