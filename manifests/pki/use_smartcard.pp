@@ -47,7 +47,7 @@ class subversion::pki::use_smartcard {
     $pkcs11_provider = $::osfamily ? {
         'RedHat' => 'coolkey',
         'Darwin' => 'opensc-pkcs11',
-        default  => unimplemented(),
+        default  => fail("unimplemented on ${::osfamily}"),
     }
 
     require subversion::servers_config
