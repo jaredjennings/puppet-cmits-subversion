@@ -18,11 +18,11 @@
 class subversion::servers_config {
     file { '/etc/subversion':
         ensure => directory,
-        owner => root, group => 0, mode => 0755,
+        owner => root, group => 0, mode => '0755',
     }
 
     file { '/etc/subversion/servers':
         ensure => present,
-        owner => root, group => 0, mode => 0644,
+        owner => root, group => 0, mode => '0644',
     }
 }
